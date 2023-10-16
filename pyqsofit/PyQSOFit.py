@@ -923,7 +923,7 @@ class QSOFit():
         # slope for the power-law continuum
         fit_params.add('PL_slope', value=pp0[7], min=contilist[7]['min'], max=contilist[7]['max'], vary=bool(contilist[7]['vary']))
         # norm, Te and Tau_e for the Balmer continuum at <3646 A
-        fit_params.add('Blamer_norm', value=pp0[8], min=contilist[8]['min'], max=contilist[8]['max'], vary=bool(contilist[8]['vary']))
+        fit_params.add('Balmer_norm', value=pp0[8], min=contilist[8]['min'], max=contilist[8]['max'], vary=bool(contilist[8]['vary']))
         fit_params.add('Balmer_Te', value=pp0[9], min=contilist[9]['min'], max=contilist[9]['max'], vary=bool(contilist[9]['vary']))
         fit_params.add('Balmer_Tau', value=pp0[10], min=contilist[10]['min'], max=contilist[10]['max'], vary=bool(contilist[10]['vary']))
         # polynomial for the continuum f = a_0 x^0 + a_1 x^1 + a_2 x^2 + ... 
@@ -951,8 +951,8 @@ class QSOFit():
         # Check if we will attempt to fit the Balmer continuum region
         ind_BC = np.where(wave[tmp_all] < 3646, True, False)
         if (self.BC == False) or (np.sum(ind_BC) <= 100):
-            fit_params['Blamer_norm'].value = 0
-            fit_params['Blamer_norm'].vary = False
+            fit_params['Balmer_norm'].value = 0
+            fit_params['Balmer_norm'].vary = False
             fit_params['Balmer_Te'].vary = False
             fit_params['Balmer_Tau'].vary = False
             
