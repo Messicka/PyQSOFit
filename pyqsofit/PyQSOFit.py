@@ -154,8 +154,8 @@ class QSOFit():
     def Fit(self, name=None, nsmooth=1, and_mask=False, or_mask=False, reject_badpix=True, deredden=True, wave_range=None,
             wave_mask=None, decompose_host=True, host_line_mask=True, BC03=False, Mi=None, npca_gal=5, npca_qso=10, Fe_uv_op=True,
             poly=False, BC=False, rej_abs_conti=False, rej_abs_line=False, initial_guess=None,
-            n_pix_min_conti=100, param_file_name='qsopar.fits', MC=False, MCMC=False, save_fits_name=None,
-            nburn=20, nsamp=200, nthin=10, epsilon_jitter=0., linefit=True, save_result=True, plot_fig=True, save_fits_path='.',
+            n_pix_min_conti=100, param_file_name='qsopar.fits', MC=False, MCMC=False, save_fits_name=None, nburn=20,
+            nsamp=200, nthin=10, epsilon_jitter=0., linefit=True, save_result=True, plot_fig=True, save_fig_path='.', save_fits_path='.',
             save_fig=True, plot_corner=True, verbose=False, kwargs_plot={}, kwargs_conti_emcee={}, kwargs_line_emcee={}):
         
         """
@@ -549,7 +549,7 @@ class QSOFit():
         Plot the results
         """
         if plot_fig == True:
-            self.plot_fig(**kwargs_plot)
+            self.plot_fig(save_fig_path=save_fig_path, **kwargs_plot)
             
         return
     
