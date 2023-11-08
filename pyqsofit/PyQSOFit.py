@@ -2193,8 +2193,8 @@ class QSOFit():
         # Save figure
         if self.save_fig == True:
             if self.verbose:
-                print('Saving figure as', os.path.join(save_fig_path, self.sdss_name+'.pdf'))
-            fig.savefig(os.path.join(save_fig_path, self.sdss_name+'.pdf'))
+                print('Saving figure as', os.path.join(save_fig_path, self.sdss_name+'.png'))
+            fig.savefig(os.path.join(save_fig_path, self.sdss_name+'.png'))
             plt.close(fig) # Close figure to save memory
         
         self.fig = fig
